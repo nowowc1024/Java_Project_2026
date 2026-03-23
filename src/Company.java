@@ -32,7 +32,10 @@ public class Company {
         System.out.println("-----------------------------");
         System.out.println("Projects (" + projects.size() + "):");
         for (Project p : projects) {
-            p.printStatus();
-        }
+            System.out.println("- " + p.getName()
+                + " | status: " + p.getStatus()
+                + " | progress: " + p.getProgress() + "/" + p.getRequiredWork()
+                + " | finished: " + p.isFinished());
+}
     }
 }

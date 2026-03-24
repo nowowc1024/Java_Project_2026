@@ -1,3 +1,5 @@
+package com.example.techcorp;
+
 public class AutomatedTool implements Workable {
     private String name;
     private int productivity;

@@ -1,3 +1,5 @@
+package com.example.techcorp;
+
 public class FreelancerBot implements Workable {
 
     private String name;

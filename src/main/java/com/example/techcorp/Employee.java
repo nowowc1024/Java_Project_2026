@@ -1,3 +1,5 @@
+package com.example.techcorp;
+
 public abstract class Employee implements Workable {
     private String name;
     private int skill;

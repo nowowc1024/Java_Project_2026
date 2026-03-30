@@ -1,24 +1,40 @@
 package com.example.techcorp;
 
-public abstract class Employee implements Workable {
+public class Employee implements Workable {
     private String name;
     private int skill;
     private double salary;
 
     public Employee(String name, int skill, double salary) {
-        if (skill < 0 || skill > 10)
-        throw new IllegalArgumentException("Skill must be between 0 and 10");
+        if (name == null || name.isBlank()) {
+            throw new IllegalArgumentException("Name cannot be null or blank.");
+        }
+        if (skill <= 0) {
+            throw new IllegalArgumentException("Skill must be greater than zero.");
+        }
+        if (salary < 0) {
+            throw new IllegalArgumentException("Salary cannot be negative.");
+        }
         this.name = name;
         this.skill = skill;
         this.salary = salary;
     }
+
     public String getName() { return name; }
     public int getSkill() { return skill; }
     public double getSalary() { return salary; }
-   
-    // work() required by Workable — each subclass provides its own version.
+
+    @Override
+    public int work() {
+        return skill;
+    }
+
     public void printInfo() {
-        System.out.println("Name: " + name
-            + " | Skill: " + skill + " | Salary: " + salary);
+        System.out.println("Employee: " + name + ", Skill: " + skill + ", Salary: " + salary);
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{name='" + name + "', skill=" + skill + ", salary=" + salary + "}";
     }
 }

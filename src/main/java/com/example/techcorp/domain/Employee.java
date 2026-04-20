@@ -6,36 +6,36 @@ public class Employee implements Workable {
     private double salary;
 
     public Employee(String name, int skill, double salary) {
-        if (name == null || name.isBlank()) {
+        if (name == null || name.isBlank())
             throw new IllegalArgumentException("Name cannot be null or blank.");
-        }
-        if (skill <= 0) {
+        if (skill <= 0)
             throw new IllegalArgumentException("Skill must be greater than zero.");
-        }
-        if (salary < 0) {
+        if (salary < 0)
             throw new IllegalArgumentException("Salary cannot be negative.");
-        }
-        this.name = name;
-        this.skill = skill;
+        this.name   = name;
+        this.skill  = skill;
         this.salary = salary;
     }
 
-    public String getName() { return name; }
-    public int getSkill() { return skill; }
+    public String getName()   { return name; }
+    public int getSkill()     { return skill; }
     public double getSalary() { return salary; }
 
     @Override
-    public int work() {
-        return skill;
-    }
+    public int work() { return skill; }
+
+    public String getRole() { return "Employee"; }
 
     public int getProductivity() { return skill; }
+
     public void printInfo() {
-        System.out.println("Employee: " + name + ", Skill: " + skill + ", Salary: " + salary);
+        System.out.println("Employee: " + name
+            + ", Skill: " + skill + ", Salary: " + salary);
     }
 
     @Override
     public String toString() {
-        return "Employee{name='" + name + "', skill=" + skill + ", salary=" + salary + "}";
+        return "Employee{name='" + name + "', skill=" + skill
+            + ", salary=" + salary + "}";
     }
 }

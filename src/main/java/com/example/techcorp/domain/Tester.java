@@ -1,5 +1,4 @@
 package com.example.techcorp.domain;
-import com.example.techcorp.domain.Employee;
 
 public class Tester extends Employee {
 
@@ -11,4 +10,7 @@ public class Tester extends Employee {
     public int work() {
         return getSkill();
     }
+
+    @Override
+    public String getRole() { return "Tester"; }
 }
